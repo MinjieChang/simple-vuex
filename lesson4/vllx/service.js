@@ -104,6 +104,9 @@ export function register(store, { state, actions, mutations, getters }, Vue) {
       $$state: state
     },
     // Vuex的getters就像vue的计算属性,getter 的返回值会根据它的依赖被缓存起来
+    // getters被绑定到了计算属性上，访问getters定义的key，相当于访问计算属性，
+    // 访问计算数据会访问state中的值，state中的值放在data中被vue做了双向绑定了
+    // 所以就很明朗了，值改变会触发视图更新
     computed
   });
 }
